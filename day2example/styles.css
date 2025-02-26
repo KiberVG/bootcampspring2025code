@@ -1,0 +1,53 @@
+/* #E8EBE4;
+#D81E5B;
+#23395B; */
+
+body {
+    background: #E8EBE4;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 1px;
+}
+
+#hero {
+    text-align: center;
+    padding: 5rem;
+    
+}
+
+#hero > h3 {
+    margin-top: 0;
+}
+
+#hero > h1 {
+    margin-bottom: 0;
+}
+
+#hero img {
+    border-radius: 20px;
+}
+
+hr {
+    border-radius: 100%;
+    width: 50%;
+}
+
+#experience-title {
+    text-align: center;
+}
+
+.experience {
+    width: 20rem;
+    margin: 1rem;
+    
+    padding: 1rem;
+    border-width: 1px;
+    border-style: dashed;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+}
+
+#experience-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
