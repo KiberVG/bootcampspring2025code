@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+}
+
+.game-button {
+    padding: 1rem;
+    margin: 0.2rem;
+    width: 10rem;
+    border-radius: 20px;
+}
+
+.game-button:hover {
+    background-color: aquamarine;
+    color: white;
+    cursor: pointer;
+}
+
