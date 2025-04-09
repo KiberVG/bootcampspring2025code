@@ -25,8 +25,6 @@ function displayCards() {
         let currCard = cards[i]
         let front = currCard[0]
 
-        
-
         // Creating the card
         let cardDiv = document.createElement('div')
         cardDiv.classList.add('card')
@@ -36,7 +34,6 @@ function displayCards() {
         cardDiv.appendChild(text)
 
         // <div class='card'> <p> Text </p> <div>
-        
 
         cardDiv.dataset.flipped = 'false'
 
@@ -49,6 +46,16 @@ function displayCards() {
     }
 }
 
+function addCard() {
+    let newCardTitle = document.getElementById('card-title').value;
+    let newCardBody = document.getElementById('card-content').value;
+    
+    cards.push([newCardTitle, newCardBody])
+    document.getElementById('cards').innerHTML = ''
+    displayCards()
+}
 
 
+let addCardButton = document.getElementById('add-card-button').addEventListener('click', addCard)
 displayCards()
+

@@ -1,0 +1,16 @@
+.note {
+  width: 8rem;
+  height: 9rem;
+  border-style: dotted;
+  border-width: 1px;
+  border-color: black;
+  text-align: center;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 25px;
+}
+
+#notes-container {
+  display: flex;
+  flex-wrap: wrap;
+}

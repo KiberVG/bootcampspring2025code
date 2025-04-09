@@ -42,8 +42,16 @@ function game(userchoice) {
 
 }
 
+let myArr = [<div dataset-symbol='1'></div>, <div dataset-symbol='2'></div>, <div dataset-symbol='2'></div>]
+
 function win(userchoice, botchoice, won) {
-    let body = document.body
+    let body = document.body // body is in memory <body> </body> 
+    shuffle(myArr)
+    let gameboard = document.getElementById('gameboard')
+    for (let i =0; i < myArr.length; i++) {
+        gamebaord.appendChild(myArr[i])
+    }
+
     let h2 = document.createElement('h2')
     let result
     if (won) {
