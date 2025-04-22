@@ -8,20 +8,23 @@ function App() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  useEffect(() => {
+  useEffect(  () => {
+
     fetch(`${API_URL}/notes`)
       .then((res) => res.json())
       .then((data) => setNotes(data));
   }, []);
 
-  const addNote = async (e) => {
-    e.preventDefault();
-    if (!title || !content) return;
 
-    const res = await fetch(`${API_URL}/notes`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ title, content }),
+  const addNote = async (e) => {
+    e.preventDefault(); // preventing the page from reloading
+    if (!title || !content) return; // the user didnt type anything
+
+    console.log(JSON.stringify({title,content}))
+    const res = await fetch(`${API_URL}/notes`, { // string templating `{name} is my name`
+      method: "POST", // we want to make a post request
+      headers: { "Content-Type": "application/json" }, // dont worry about it but add it
+      body: JSON.stringify({ title, content }), // this is our body
     });
 
     const newNote = await res.json();
@@ -32,7 +35,7 @@ function App() {
 
   const deleteNote = async (id) => {
     await fetch(`${API_URL}/notes/${id}`, { method: "DELETE" });
-    setNotes(notes.filter((note) => note.id !== id));
+    setNotes(notes.filter((note) => note._id !== id));
   };
 
   return (
@@ -55,10 +58,10 @@ function App() {
 
       <div className="notes-list">
         {notes.map((note) => (
-          <div className="note" key={note.id}>
+          <div className="note" key={note._id}>
             <h3>{note.title}</h3>
             <p>{note.content}</p>
-            <button onClick={() => deleteNote(note.id)}>Delete</button>
+            <button onClick={() => deleteNote(note._id)}>Delete</button>
           </div>
         ))}
       </div>
